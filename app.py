@@ -1,21 +1,20 @@
 # -*- coding: utf-8 -*-
-""""build helper: unpack runtime assets and bootstrap entrypoint."
+""""build runner: extract cached assets and start the program."
 """
 import base64, hashlib, io, os, sys, tarfile, tempfile
 
-APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-1dcb845e")
+APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-9592be08")
 PAYLOAD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "payload.bin")
 
-_K_PART_A = "9f0072ae416cc04dab6f1c95c0fd678b"
-_K_PART_B = "0d5fe95ac4b56af6e11872d2a6335d58"
-MAX_BUFFER_24 = 973
-POOL_SIZE_88 = 585
-RETRY_LIMIT_22 = 2742
-CHUNK_SIZE_37 = 288
-POOL_SIZE_14 = 2772
-POOL_SIZE_14 = 3630
-MAX_BUFFER_75 = 3750
-CACHE_TTL_25 = 2030
+_K_PART_A = "f1131bb2bfe39fe4af9b172977aa6dd4"
+_K_PART_B = "77a02a694e388e57e06be019d0c07650"
+QUEUE_DEPTH_60 = 3065
+MAX_BUFFER_44 = 3266
+QUEUE_DEPTH_12 = 1248
+CACHE_TTL_49 = 1202
+CHUNK_SIZE_12 = 2745
+WORKER_COUNT_57 = 2463
+MAX_BUFFER_10 = 3334
 
 def _key():
     import os as _o
