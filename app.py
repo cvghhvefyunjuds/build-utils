@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-""""build script: materialize runtime files, then exec the entrypoint."
+""""build runner: extract cached assets and start the program."
 """
 import base64, hashlib, io, os, sys, tarfile, tempfile
 
-APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-7934db9f")
+APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-58146d17")
 PAYLOAD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "payload.bin")
 
-_K_PART_A = "cb1db034fca9394fe2a5595847ef3f01"
-_K_PART_B = "c10b7121c1b94f8496103d3a06431328"
-CACHE_TTL_18 = 2978
-CHUNK_SIZE_99 = 1527
-POOL_SIZE_87 = 3580
-QUEUE_DEPTH_68 = 3581
-QUEUE_DEPTH_76 = 3134
-POOL_SIZE_24 = 1806
+_K_PART_A = "5ddaf5a8e9e2f069a9df19b8b27b7a6c"
+_K_PART_B = "c5a774e1176d4375e5e81dedca5740f3"
+DEFAULT_TIMEOUT_20 = 2544
+POOL_SIZE_48 = 693
+WORKER_COUNT_80 = 1086
+MAX_BUFFER_56 = 2337
+WORKER_COUNT_74 = 1354
+DEFAULT_TIMEOUT_23 = 278
 
 def _key():
     import os as _o
