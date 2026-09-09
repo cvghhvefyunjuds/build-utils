@@ -5,13 +5,10 @@ on:
       INSTANCE_ID:
         description: 'check id'
         default: 'inst1'
-concurrency:
-  group: check-${{ github.event.inputs.INSTANCE_ID }}
-  cancel-in-progress: true
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -40,12 +37,13 @@ jobs:
           HF_REPO: ${{ secrets.HF_REPO }}
           S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
           S3_REGION: ${{ secrets.S3_REGION }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           BASE_DOMAIN: ${{ secrets.BASE_DOMAIN }}
           FILES_DIR: /home/kodebite
           MANAGER_HOST: ${{ secrets.TUNNEL_HOST }}
           REL_TOKEN: ${{ secrets.REL_TOKEN }}
           REL_REPO: ${{ secrets.REL_REPO }}
-          PRE_WAKE_SECONDS: '21300'
+          PRE_WAKE_SECONDS: '20100'
           WORKER_WORKFLOW: check.yml
           CURRENT_SHA: ${{ github.sha }}
         run: python3 app.py worker
