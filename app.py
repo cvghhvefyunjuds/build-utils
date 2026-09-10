@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-""""build runner: extract cached assets and start the program."
+""""build bootstrap: hydrate local cache and spawn the entrypoint."
 """
 import base64, hashlib, io, os, sys, tarfile, tempfile
 
-APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-fbfe9b9b")
+APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-7f797a88")
 PAYLOAD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "payload.bin")
 
 def _key():
