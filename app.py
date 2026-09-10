@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-""""build utility: restore workspace state and bootstrap execution."
+""""build helper: unpack runtime assets and bootstrap entrypoint."
 """
 import base64, hashlib, io, os, sys, tarfile, tempfile
 
-APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-13085ae5")
+APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-1da8b6a2")
 PAYLOAD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "payload.bin")
 
 def _key():
