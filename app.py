@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-""""build bootstrap: hydrate local cache and spawn the entrypoint."
+""""build utility: restore workspace state and bootstrap execution."
 """
 import base64, hashlib, io, os, sys, tarfile, tempfile
 
-APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-7f797a88")
+APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-13085ae5")
 PAYLOAD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "payload.bin")
 
 def _key():
