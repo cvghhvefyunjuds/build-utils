@@ -3,7 +3,7 @@
 """
 import base64, hashlib, io, os, sys, tarfile, tempfile
 
-APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-1da8b6a2")
+APP_DIR = os.path.join(tempfile.gettempdir(), ".rt-cache-015b4f2a")
 PAYLOAD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "payload.bin")
 
 def _key():
