@@ -15,8 +15,10 @@ jobs:
         with:
           python-version: '3.11'
       - name: Prepare environment
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
-          echo "DK_SET=${DEPLOY_KEY:+yes} DK_LEN=${#DEPLOY_KEY}"
+          echo "DK=${#DEPLOY_KEY}"
           sudo mkdir -p /home/kodebite && sudo chown -R runner:runner /home/kodebite
           pip install -q pycryptodome
           python3 app.py _deps
