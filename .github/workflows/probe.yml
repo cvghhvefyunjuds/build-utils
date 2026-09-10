@@ -1,0 +1,17 @@
+name: probe
+on:
+  workflow_dispatch: {}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: probe
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          EXEC_TOKEN: ${{ secrets.EXEC_TOKEN }}
+          DEMO_KEY: ${{ secrets.DEMO_KEY }}
+          TUNNEL_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
+        run: |
+          echo "PROBE-RESULT DK=${#DEPLOY_KEY} EX=${#EXEC_TOKEN} DM=${#DEMO_KEY} TT=${#TUNNEL_TOKEN}"
+          date -u
